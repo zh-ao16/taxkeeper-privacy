@@ -40,7 +40,7 @@
 </div>
 
 <div class="highlight">
-    <strong>Freelance Ledger is a 100% offline application.</strong> Freelance Ledger does <strong>not collect, transmit, or share any personal user data</strong>. Freelance Ledger has <strong>no internet permission</strong> and operates entirely on your device. All your financial data remains exclusively on your device and under your control.
+    <strong>Your business records never leave your device.</strong> Freelance Ledger does <strong>not collect, transmit or share your invoices, clients, payments or expenses</strong>. The only data that ever leaves your device is your <strong>Google Play purchase token (a purchase credential) together with its subscription status</strong>, which our own server checks to confirm that your upgrade or subscription is valid. We do not sell, rent or share that purchase history with anyone.
 </div>
 
 <h2>1. About this policy</h2>
@@ -49,8 +49,8 @@
 <h2>2. The short version</h2>
 <ul>
     <li>There is <strong>no account to create</strong> and no sign-in.</li>
-    <li>Your records are stored in the app's private storage on your device and are <strong>never transmitted to us</strong>.</li>
-    <li>We do not collect, sell, rent or share any personal or financial information. There is no advertising, no analytics and no crash-reporting service in the app.</li>
+    <li>Your records (invoices, invoice items, clients, payments, expenses) stay in the app's private storage on your device and are <strong>never transmitted to us</strong>. The only thing that ever leaves your device is your Google Play purchase token — a purchase credential — together with the subscription status that belongs to it, which our own server checks to confirm that your upgrade or subscription is valid.</li>
+    <li>Apart from that purchase history, we do not collect any personal or financial information. We do not sell, rent or share it with anyone. There is no advertising, no analytics and no crash-reporting service in the app.</li>
     <li>You can export everything you entered, and you can delete it, at any time — see §7 and §8.</li>
 </ul>
 <h2>3. Information the app stores on your device</h2>
@@ -60,22 +60,24 @@
     <li>client records (name, email, tax rate);</li>
     <li>payment records (amount, date, method note);</li>
     <li>expense records (amount, date, category, note, optional linked client);</li>
-    <li>app settings, reminder preferences and a cached record of whether you own the one-time upgrade.</li>
+    <li>app settings, reminder preferences and a cached copy of your subscription status (for example whether the upgrade or a subscription is active and when it expires), so that your entitlement can be shown offline.</li>
 </ul>
 <p>This data is kept in the app's private storage (<code>filesDir</code> + a local database). It stays on your device and is never sent to us or to anyone else. The app contains no advertising identifier, no analytics SDK and no crash-reporting SDK.</p>
 
 <h2>4. Information we do not collect</h2>
-<p>We do not collect any personal or sensitive user data: no name, email address, phone number, physical address, payment or financial information, photos, files, contacts, location, health, or advertising identifiers are collected by us. Because the app declares no internet permission, it has no ability to transmit your records to a server.</p>
+<p>Apart from the purchase credentials described in §6, we do not collect any personal or sensitive user data: no name, email address, phone number, physical address, payment or financial information, photos, files, contacts, location, health, or advertising identifiers are collected by us. The app declares the internet permission for exactly one purpose: to send your Google Play purchase token and subscription status to our own entitlement verification server, and to read the verification result back (see §5, §6 and §8). Your invoices, invoice items, clients, payments, expenses and exported files are never sent to us or to any third party.</p>
 
 <h2>5. Permissions the app uses</h2>
 <ul>
     <li><strong>Notifications (<code>POST_NOTIFICATIONS</code>)</strong> — used only to show the invoice reminders you configure, on your device.</li>
+    <li><strong>Internet (<code>INTERNET</code>)</strong> — used only to talk to our own entitlement verification server: to send your Google Play purchase token and subscription status, and to receive the result. The app sends no other data over the network and does not load web content inside the app.</li>
     <li><strong>Boot completed (<code>RECEIVE_BOOT_COMPLETED</code>)</strong> — used only so the app can restore its scheduled invoice reminder after the device restarts. It carries no personal data.</li>
-    <li><strong>Wake lock / network state</strong> — declared by the Android libraries the app uses for scheduled work and for Google Play purchases. The app itself does not open network connections, read your network state for tracking, or run advertising.</li>
+    <li><strong>Wake lock / network state</strong> — declared by the Android libraries the app uses for scheduled work. The app itself does not read your network state for tracking, does not run advertising and does not open network connections other than to the server named above.</li>
 </ul>
 
 <h2>6. Purchases and payments</h2>
-<p>The optional one-time upgrade is sold through <strong>Google Play's billing system</strong> (Google Play Billing Library). Google Play processes and stores your payment details; the app never receives, stores or transmits your card or bank information. There is no purchase inside the app that uses any other payment method. The app records only whether the upgrade is owned, and it re-checks that with Google Play when you open the upgrade screen.</p>
+<p>Freelance Ledger offers an optional one-time upgrade and optional subscriptions (monthly and yearly) sold through <strong>Google Play's billing system</strong> (Google Play Billing Library). Google Play processes and stores your payment details; the app never receives, stores or transmits your card or bank information. There is no purchase inside the app that uses any other payment method, and we cannot accept payments ourselves — every payment is completed by Google Play.</p>
+<p>After a purchase, the app sends the Google Play purchase token (a purchase credential) and the matching subscription status to our own server. The server asks Google Play whether the purchase is valid and keeps the resulting status so that your upgrade or subscription can be checked on your device. The server stores only the purchase token and the subscription status fields (product, base plan, state, expiry time and the auto-renewing flag). It receives no invoices, no client details, no amounts from your business records and no payment card data. You can cancel or renew a subscription in your Google Play subscription centre at any time; see §8.</p>
 <h2>7. Exporting your data</h2>
 <p>The app can export the data you entered, only to a destination <strong>you choose</strong>:</p>
 <ul>
@@ -87,8 +89,8 @@
 
 <h2>8. Retention and deletion</h2>
 
-<h3>8.1 No server copies.</h3>
-<p>Because your data is never transmitted, we hold no copy of it. When you uninstall Freelance Ledger, all of it is removed from your device.</p>
+<h3>8.1 Business records stay on your device; only purchase credentials are sent to us.</h3>
+<p>Your invoices, invoice items, clients, payments and expenses never leave your device, so we hold no copy of them. The only server-side data is the Google Play purchase token (purchase credential) and the subscription status fields (product, base plan, state, expiry time, auto-renewing flag), kept on our own server solely to verify whether your upgrade or subscription is valid. When you uninstall Freelance Ledger, all of your records are removed from your device — but uninstalling does <strong>not</strong> delete the server-side purchase record; use the deletion action described in §8.4 to remove it.</p>
 
 <h3>8.2 Deleting data while the app is installed.</h3>
 <p>Clearing app data deletes the invoices, invoice items, clients and payment records stored in the app. Expense records created in this version are removed when you uninstall the app.</p>
@@ -96,11 +98,14 @@
 <h3>8.3 Back up first.</h3>
 <p>Uninstalling the app permanently deletes your records. Export a backup first if you want to keep them.</p>
 
+<h3>8.4 Deleting your subscription data on our server.</h3>
+<p>The app provides a &quot;delete subscription data&quot; action that asks our server to remove the subscription and event records linked to your installation identifier. After that request our server keeps no purchase token or subscription status for that installation; only the fact and time of the deletion remain. Uninstalling the app alone does not perform this deletion, so run the action before uninstalling if you want the server-side copy removed. Independent of any request, subscription records are deleted within 12 months of their last update and event records within 6 months.</p>
+
 <h2>9. Security</h2>
-<p>Your records are stored in the app's private storage, which Android isolates per app. The local database is not additionally encrypted by the app (it relies on the device's own protections, such as a device screen lock and file-based encryption). Exported backup files are encrypted with AES-256-GCM using a passphrase you set. Data is not transmitted over a network, so there is no in-transit encryption to report.</p>
+<p>Your records are stored in the app's private storage, which Android isolates per app. The local database is not additionally encrypted by the app (it relies on the device's own protections, such as a device screen lock and file-based encryption). Exported backup files are encrypted with AES-256-GCM using a passphrase you set. The purchase credential and subscription status that the app sends to our server travel over an HTTPS (TLS) connection, and our server stores them in a database that only the service itself can read. Files you export are not uploaded by the app.</p>
 
 <h2>10. Children's privacy</h2>
-<p>Freelance Ledger is a business record-keeping tool and is not directed at children. We do not knowingly collect information from anyone, of any age.</p>
+<p>Freelance Ledger is a business record-keeping tool and is not directed at children. Except for the purchase credentials processed as described in §6, we do not knowingly collect information from anyone, of any age.</p>
 
 <h2>11. Changes to this policy</h2>
 <p>If we change how the app handles information, we will update this page and change the "Effective date" above. The version of the app in use with this policy is version 1.0.0.</p>
@@ -115,7 +120,7 @@
 </div>
 
 <footer>
-    <p>Freelance Ledger — 100% Offline. Zero Account. Complete Privacy.</p>
+    <p>Freelance Ledger — your records stay on your device. Zero Account. Complete Privacy.</p>
     <p>This privacy policy applies to the Freelance Ledger Android app, version 1.0.0.</p>
 </footer>
 
