@@ -31,7 +31,7 @@
 <div class="container">
 
 <h1>Freelance Ledger — Privacy Policy</h1>
-<p class="last-updated">Effective date: October 28, 2026</p>
+<p class="last-updated">Effective date: October 30, 2026</p>
 
 <div class="meta">
     <p><strong>App:</strong> Freelance Ledger (Android), package <code>com.freelanceledger.app</code></p>
@@ -78,6 +78,12 @@
 <h2>6. Purchases and payments</h2>
 <p>Freelance Ledger offers an optional one-time upgrade and optional subscriptions (monthly and yearly) sold through <strong>Google Play's billing system</strong> (Google Play Billing Library). Google Play processes and stores your payment details; the app never receives, stores or transmits your card or bank information. There is no purchase inside the app that uses any other payment method, and we cannot accept payments ourselves — every payment is completed by Google Play.</p>
 <p>After a purchase, the app sends the Google Play purchase token (a purchase credential) and the matching subscription status to our own server. The server asks Google Play whether the purchase is valid and keeps the resulting status so that your upgrade or subscription can be checked on your device. The server stores only the purchase token and the subscription status fields (product, base plan, state, expiry time and the auto-renewing flag). It receives no invoices, no client details, no amounts from your business records and no payment card data. You can cancel or renew a subscription in your Google Play subscription centre at any time; see §8.</p>
+<h2>6.1 Where our server is, and cross-border transfers</h2>
+<p>Our entitlement verification server is operated by us and is physically located in the Hong Kong Special Administrative Region (Hong Kong, China). Your purchase credential (the Google Play purchase token) and the resulting subscription status are therefore transferred from your device to Hong Kong for processing. That is a transfer of information out of the country in which you may be located.</p>
+<p>We do this because the server has to check the purchase with Google Play and keep the resulting status so that your upgrade or subscription can be validated on your device. The transfer is limited to the purchase credential and the subscription status fields listed in &sect;6; no business record, no personal detail and no payment card data is part of it.</p>
+<p>The connection to that server is protected by HTTPS (TLS). The data is stored in a database that only the service itself can read, and is deleted as described in &sect;8.4. We do not sell, rent or share this information with any other party, and we do not combine it with any advertising or analytics profile.</p>
+<p>Google Play itself processes and stores your payment details under its own privacy policy and terms, and is a separate controller for that payment data; we never receive your card or bank information. See the "Purchases and payments" section above for what the app sends us.</p>
+
 <h2>7. Exporting your data</h2>
 <p>The app can export the data you entered, only to a destination <strong>you choose</strong>:</p>
 <ul>
@@ -102,7 +108,7 @@
 <p>The app provides a &quot;delete subscription data&quot; action that asks our server to remove the subscription and event records linked to your installation identifier. After that request our server keeps no purchase token or subscription status for that installation; only the fact and time of the deletion remain. Uninstalling the app alone does not perform this deletion, so run the action before uninstalling if you want the server-side copy removed. Independent of any request, subscription records are deleted within 12 months of their last update and event records within 6 months.</p>
 
 <h2>9. Security</h2>
-<p>Your records are stored in the app's private storage, which Android isolates per app. The local database is not additionally encrypted by the app (it relies on the device's own protections, such as a device screen lock and file-based encryption). Exported backup files are encrypted with AES-256-GCM using a passphrase you set. The purchase credential and subscription status that the app sends to our server travel over an HTTPS (TLS) connection, and our server stores them in a database that only the service itself can read. Files you export are not uploaded by the app.</p>
+<p>Your records are stored in the app's private storage, which Android isolates per app. The local database is not additionally encrypted by the app (it relies on the device's own protections, such as a device screen lock and file-based encryption). Exported backup files are encrypted with AES-256-GCM using a passphrase you set. The purchase credential and subscription status that the app sends to our server travel over an HTTPS (TLS) connection, and our server stores them in a database that only the service itself can read. The server is located in Hong Kong &mdash; see &sect;6.1. Files you export are not uploaded by the app.</p>
 
 <h2>10. Children's privacy</h2>
 <p>Freelance Ledger is a business record-keeping tool and is not directed at children. Except for the purchase credentials processed as described in §6, we do not knowingly collect information from anyone, of any age.</p>
